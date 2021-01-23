@@ -8,7 +8,17 @@ app.get('/', (req, res) => {
 
 io.on('connection', (socket) => {
   console.log('a user connected');
+
+  socket.on("new-color", (color)=>{
+    console.log(color)
+  socket.broadcast.emit("receive-color", color)
+  })
+  socket.on("disconnect", () => console.log("a user disconnected"));
+
 });
+
+
+
 
 http.listen(3000, () => {
   console.log('listening on *:3000');
