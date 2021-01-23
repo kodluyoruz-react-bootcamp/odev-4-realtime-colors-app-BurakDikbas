@@ -1,19 +1,14 @@
 import './App.css';
-import {useEffect, useLayoutEffect} from "react"
-import { io } from 'socket.io-client';
+import Container from "./Container"
+import { ColorProvider } from './contexts/ColorContext';
 
-function App() {
- 
-  useEffect(()=>{
-    const socket = io("http://localhost:3000/", {
-      transports: ['websocket']
-    });
-  },[] )
+
+function App() { 
 
   return (
-    <div >
-
-    </div>
+    <ColorProvider>
+      <Container/>
+    </ColorProvider>
   );
 }
 
