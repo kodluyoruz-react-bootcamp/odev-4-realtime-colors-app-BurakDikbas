@@ -6,7 +6,7 @@ import { disconnectSocket, initSocket, sendColor, subscribeToColor
 import ColorContext from "../contexts/ColorContext"
 
 function BackColor() {
-    const [color, setColor]= useState ();
+    const [color, setColor]= useState ("#fff");
     
     const data= useContext(ColorContext)
     console.log(data)
